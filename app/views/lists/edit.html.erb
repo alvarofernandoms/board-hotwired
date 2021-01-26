@@ -1,0 +1,8 @@
+<%= turbo_frame_tag 'list' do %>
+  <h1>Editing list</h1>
+
+  <%= render 'form', list: @list %>
+
+  <%= link_to 'Show', @list %> |
+  <%= link_to 'Back', lists_path, 'data-turbo-frame': :_top %>
+<% end %>

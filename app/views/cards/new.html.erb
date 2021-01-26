@@ -1,0 +1,9 @@
+<%= turbo_frame_tag 'new_card' do %>
+  <h2>New Card</h2>
+  <%= form_with model: [@list, @card] do |form| %>
+      <div class='field'>
+        <%= form.text_field :content %>
+        <%= form.submit 'Add', 'data-reset_form-target': 'button' %>
+      </div>
+  <% end %>
+<% end %>
