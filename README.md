@@ -1,24 +1,9 @@
-# README
+# Board Hotwired - Trello Clone Sample App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Just to try the new magic hotwire-rails gem. Using ruby `3.0.0p0` and rails `6.1.1`.
 
-Things you may want to cover:
+![](peek-2021-01-26-18-59.gif)
 
-* Ruby version
+## Room for improvement
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](screeshot-2021-01-26-19-13-51.png)
