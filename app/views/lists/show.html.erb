@@ -1,14 +1,13 @@
-<%= turbo_stream_from @list %>
+<div class="col-12 card mr-5 bg-light font-weight-bold">
+  <%= turbo_stream_from @list %>
 
-<%= turbo_frame_tag 'list' do %>
-  <%= render @list %>
-  <%= link_to 'Edit', edit_list_path(@list) %> |
-  <%= link_to 'Back', lists_path, 'data-turbo-frame': :_top %>
-<% end %>
+  <%= turbo_frame_tag 'list' do %>
+    <%= render @list %>
+  <% end %>
 
-<div id='cards'>
-  <h2>Cards</h2>
-  <%= render @list.cards %>
+  <div id='cards'>
+    <%= render @list.cards %>
+  </div>
+
+  <%= turbo_frame_tag 'new_card', src: new_list_card_path(@list), target: :_top %>
 </div>
-
-<%= turbo_frame_tag 'new_card', src: new_list_card_path(@list), target: :_top %>

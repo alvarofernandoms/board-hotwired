@@ -1,26 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lists</h1>
+<h1>Board Hotwired</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="row">
     <% @lists.each do |list| %>
-      <tr>
-        <td><%= list.title %></td>
-        <td><%= link_to 'Show', list %></td>
-        <td><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= turbo_stream_from list %>
+
+      <div class="col-3 card mr-5 bg-light font-weight-bold" id="<%= dom_id(list) %>">
+        <%= turbo_frame_tag "list#{list.id}" do %>
+          <h4 class="p-2"><%= list.title %></h4>
+        <% end %>
+        <div>
+          <% list.cards.each do |card| %>
+            <div class="card mb-2 d-flex flex-row" id="<%= dom_id(card) %>">
+              <div class="card-body">
+                <h5 class="card-title"><%= card.content %></h5>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <%= turbo_frame_tag 'new_card', src: new_list_card_path(list), target: :_top %>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
 <br>
 

@@ -1,3 +1,3 @@
-<%= content_tag :div, id: dom_id(list) do %>
-  <h1><%= list.title %></h1>
+<%= content_tag :h1, id: dom_id(list) do %>
+  <%= link_to list.title, edit_list_path(@list), class: 'text-decoration-none' %>
 <% end %>
