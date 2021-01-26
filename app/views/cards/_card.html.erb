@@ -1,4 +1,4 @@
-<div class="card mb-2 d-flex flex-row p-2" id="<%= dom_id(card) %>">
+<div class="card mb-2 d-flex flex-row p-2">
   <%= content_tag :div, id: dom_id(card) do %>
     <%= card.content %>
     <em>Card created <%= time_ago_in_words(card.created_at) %> ago</em>

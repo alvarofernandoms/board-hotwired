@@ -2,6 +2,7 @@
   <%= turbo_stream_from @list %>
 
   <%= turbo_frame_tag 'list' do %>
+    <%= link_to "Edit list title", edit_list_path(@list), class: 'text-decoration-none' %>
     <%= render @list %>
   <% end %>
 

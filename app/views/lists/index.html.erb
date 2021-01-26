@@ -7,9 +7,7 @@
       <%= turbo_stream_from list %>
 
       <div class="col-3 card mr-5 bg-light font-weight-bold" id="<%= dom_id(list) %>">
-        <%= turbo_frame_tag "list#{list.id}" do %>
-          <h4 class="p-2"><%= list.title %></h4>
-        <% end %>
+        <h4 class="p-2"><%= list.title %></h4>
         <div>
           <% list.cards.each do |card| %>
             <div class="card mb-2 d-flex flex-row" id="<%= dom_id(card) %>">
